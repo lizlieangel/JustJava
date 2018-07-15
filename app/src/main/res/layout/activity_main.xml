@@ -31,7 +31,6 @@
         android:layout_height="wrap_content"
         android:text="@string/price"
         android:layout_marginBottom="@dimen/margin"
-        android:textSize="@dimen/text_size"
         android:textAllCaps="true"
         />
 
