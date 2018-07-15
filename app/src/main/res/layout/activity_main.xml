@@ -16,6 +16,12 @@
         android:textAllCaps="true"
         />
 
+    <Button
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:text="+"
+        android:onClick="increment"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,6 +31,12 @@
         android:textSize="@dimen/text_size"
         android:layout_marginBottom="@dimen/margin"
         />
+
+    <Button
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:text="-"
+        android:onClick="decrement"/>
 
     <TextView
         android:layout_width="wrap_content"
