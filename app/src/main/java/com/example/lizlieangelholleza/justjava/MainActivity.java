@@ -39,4 +39,8 @@ public class MainActivity extends AppCompatActivity {
         quantity = quantity - 1;
         display(quantity);
     }
+
+    public void displayMessage(String message) {
+
+    }
 }
