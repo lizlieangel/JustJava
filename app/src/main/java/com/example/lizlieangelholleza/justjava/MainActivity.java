@@ -30,4 +30,14 @@ public class MainActivity extends AppCompatActivity {
         TextView price = (TextView) findViewById(R.id.price_text_view);
         price.setText(NumberFormat.getCurrencyInstance().format(p));
     }
+
+    public void increment(View view) {
+        int quantity = 3;
+        display(quantity);
+    }
+
+    public void decrement(View view) {
+        int quantity = 1;
+        display(quantity);
+    }
 }
