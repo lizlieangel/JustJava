@@ -37,11 +37,6 @@ public class MainActivity extends AppCompatActivity {
         quantity.setText("" + q);
     }
 
-    public void displayPrice(int p) {
-        TextView price = (TextView) findViewById(R.id.price_text_view);
-        price.setText(NumberFormat.getCurrencyInstance().format(p));
-    }
-
     public void increment(View view) {
         quantity = quantity + 1;
         displayQuantity(quantity);
@@ -54,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayMessage(String message) {
-        TextView pricetext = (TextView) findViewById(R.id.price_text_view);
-        pricetext.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 }
