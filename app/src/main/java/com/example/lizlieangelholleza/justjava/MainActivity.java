@@ -17,12 +17,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int price = quantity * 5;
-        String message = "Total: $ " + price + "\n Thank you";
-        displayMessage(message);
+        int price = calculatePrice();
+        displayMessage(createOrderSummary(price));
     }
 
-    public void display(int q) {
+    private int calculatePrice() {
+      return quantity * 5;
+    }
+
+    public String createOrderSummary(int price) {
+        return "Name: Kaptain Kunal \n" +
+                "Quantity: " + quantity + "\n" +
+                "Total: " + price + "\n" +
+                "Thank you!";
+    }
+
+    public void displayQuantity(int q) {
         TextView quantity = (TextView) findViewById(R.id.quantity_text_view);
         quantity.setText("" + q);
     }
@@ -34,12 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
+
 
     public void decrement(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     public void displayMessage(String message) {
