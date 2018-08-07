@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public String createOrderSummary(int price, boolean whippedCream) {
         return "Name: Kaptain Kunal \n" +
+                "Add Whipped Cream? " + whippedCream + "\n" +
                 "Quantity: " + quantity + "\n" +
-                "Has Whipped Cream: " + whippedCream + "\n" +
                 "Total: " + price + "\n" +
                 "Thank you!";
     }
