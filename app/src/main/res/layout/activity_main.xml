@@ -20,13 +20,16 @@
         android:id="@+id/checkbox_meat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/whipped_cream"/>
+        android:text="@string/whipped_cream"
+        android:textSize="@dimen/text_size"
+        android:paddingLeft="@dimen/padding_side"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quantity"
         android:layout_marginBottom="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
         android:textSize="@dimen/text_size"
         android:textAllCaps="true"
         />
