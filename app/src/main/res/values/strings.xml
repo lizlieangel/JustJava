@@ -5,4 +5,5 @@
     <string name="order_summary">Order Summary</string>
     <string name="initial_quantity">0</string>
     <string name="toppings">Toppings</string>
+    <string name="whipped_cream">Whipped Cream</string>
 </resources>
