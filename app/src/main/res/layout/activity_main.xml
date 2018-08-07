@@ -17,7 +17,7 @@
         />
 
     <CheckBox
-        android:id="@+id/checkbox_meat"
+        android:id="@+id/whipped_cream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/whipped_cream"

@@ -3,12 +3,14 @@ package com.example.lizlieangelholleza.justjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
     private int quantity = 0;
+    private boolean hasWhippedCream = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +20,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         int price = calculatePrice();
-        displayMessage(createOrderSummary(price));
+        boolean whippedCream = isCheckboxClicked();
+        displayMessage(createOrderSummary(price, whippedCream));
     }
 
     private int calculatePrice() {
       return quantity * 5;
     }
 
-    public String createOrderSummary(int price) {
+    private boolean isCheckboxClicked() {
+        CheckBox wc = (CheckBox) findViewById(R.id.whipped_cream);
+        boolean hasWhippedCream = wc.isChecked();
+        return hasWhippedCream;
+    }
+    public String createOrderSummary(int price, boolean whippedCream) {
         return "Name: Kaptain Kunal \n" +
                 "Quantity: " + quantity + "\n" +
+                "Has Whipped Cream: " + whippedCream + "\n" +
                 "Total: " + price + "\n" +
                 "Thank you!";
     }
