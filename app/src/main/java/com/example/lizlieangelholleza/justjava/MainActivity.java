@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.ChoiceFormat;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice();
         boolean whippedCream = hasCream();
         boolean chocolate = hasChocolate();
-        displayMessage(createOrderSummary(price, whippedCream, chocolate));
+        String name = getUsername();
+        displayMessage(createOrderSummary(price, whippedCream, chocolate, name));
     }
 
     private int calculatePrice() {
@@ -42,8 +44,14 @@ public class MainActivity extends AppCompatActivity {
         return hasChoco;
     }
 
-    public String createOrderSummary(int price, boolean whippedCream, boolean chocolate) {
-        return "Name: Kaptain Kunal \n" +
+    private String getUsername() {
+        EditText name = (EditText) findViewById(R.id.name);
+        String username = name.getText().toString();
+        return username;
+    }
+
+    public String createOrderSummary(int price, boolean whippedCream, boolean chocolate,String name) {
+        return "Name: " + name + "\n" +
                 "Add Whipped Cream? " + whippedCream + "\n" +
                 "Add Chocolate? " + chocolate + "\n" +
                 "Quantity: " + quantity + "\n" +
