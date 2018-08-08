@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.ChoiceFormat;
 import java.text.NumberFormat;
@@ -14,7 +15,6 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
     private int quantity = 1;
     private int basePrice = 5;
-    private boolean hasWhippedCream = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +26,10 @@ public class MainActivity extends AppCompatActivity {
         boolean whippedCream = hasCream();
         boolean chocolate = hasChocolate();
         int price = calculatePrice();
+        Log.d("price2", "Submit order total price" +price);
         String name = getUsername();
         displayMessage(createOrderSummary(price, whippedCream, chocolate, name));
-    }
-
-    private int calculatePrice() {
-      return quantity * basePrice;
+        basePrice = 5;
     }
 
     private boolean hasCream() {
@@ -52,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
         return hasChoco;
     }
 
+    private int calculatePrice() {
+        int total = quantity * basePrice;
+        Log.d("price", "Calculate Total price: "+ total);
+        return total;
+    }
+
     private String getUsername() {
         EditText name = (EditText) findViewById(R.id.name);
         String username = name.getText().toString();
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String createOrderSummary(int price, boolean whippedCream, boolean chocolate,String name) {
+        Log.d("price1", "Create order total price: "+ price);
         return "Name: " + name + "\n" +
                 "Add Whipped Cream? " + whippedCream + "\n" +
                 "Add Chocolate? " + chocolate + "\n" +
@@ -73,12 +78,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view) {
+        if(quantity == 100) {
+            Toast.makeText(this, "You cannot have more than 100 coffees.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
 
 
     public void decrement(View view) {
+        if(quantity == 1) {
+            Toast.makeText(this, "You cannot have less than 1 coffee.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
     }
