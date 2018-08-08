@@ -12,7 +12,7 @@ import java.text.ChoiceFormat;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
-    private int quantity = 0;
+    private int quantity = 1;
     private int basePrice = 5;
     private boolean hasWhippedCream = false;
 
