@@ -2,6 +2,7 @@ package com.example.lizlieangelholleza.justjava;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
     private int quantity = 0;
+    private int basePrice = 5;
     private boolean hasWhippedCream = false;
 
     @Override
@@ -21,26 +23,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int price = calculatePrice();
         boolean whippedCream = hasCream();
         boolean chocolate = hasChocolate();
+        int price = calculatePrice();
         String name = getUsername();
         displayMessage(createOrderSummary(price, whippedCream, chocolate, name));
     }
 
     private int calculatePrice() {
-      return quantity * 5;
+      return quantity * basePrice;
     }
 
     private boolean hasCream() {
         CheckBox wc = (CheckBox) findViewById(R.id.whipped_cream);
         boolean hasWhippedCream = wc.isChecked();
+        if(hasWhippedCream) {
+            basePrice = basePrice + 1;
+        }
         return hasWhippedCream;
     }
 
     private boolean hasChocolate() {
         CheckBox choco = (CheckBox) findViewById(R.id.chocolate);
         boolean hasChoco = choco.isChecked();
+        if(hasChoco) {
+            basePrice = basePrice + 2;
+        }
         return hasChoco;
     }
 
