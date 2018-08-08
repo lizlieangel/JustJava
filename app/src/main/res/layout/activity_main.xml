@@ -14,14 +14,6 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <CheckBox
-            android:id="@+id/chocolate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chocolate"
-            android:textSize="@dimen/text_size"
-            android:paddingLeft="@dimen/padding_side"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +22,14 @@
             android:textSize="@dimen/text_size"
             android:textAllCaps="true"
             />
+
+        <CheckBox
+            android:id="@+id/chocolate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chocolate"
+            android:textSize="@dimen/text_size"
+            android:paddingLeft="@dimen/padding_side"/>
 
         <CheckBox
             android:id="@+id/whipped_cream"

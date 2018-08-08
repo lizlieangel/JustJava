@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.text.ChoiceFormat;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,22 +21,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         int price = calculatePrice();
-        boolean whippedCream = isCheckboxClicked();
-        displayMessage(createOrderSummary(price, whippedCream));
+        boolean whippedCream = hasCream();
+        boolean chocolate = hasChocolate();
+        displayMessage(createOrderSummary(price, whippedCream, chocolate));
     }
 
     private int calculatePrice() {
       return quantity * 5;
     }
 
-    private boolean isCheckboxClicked() {
+    private boolean hasCream() {
         CheckBox wc = (CheckBox) findViewById(R.id.whipped_cream);
         boolean hasWhippedCream = wc.isChecked();
         return hasWhippedCream;
     }
-    public String createOrderSummary(int price, boolean whippedCream) {
+
+    private boolean hasChocolate() {
+        CheckBox choco = (CheckBox) findViewById(R.id.chocolate);
+        boolean hasChoco = choco.isChecked();
+        return hasChoco;
+    }
+
+    public String createOrderSummary(int price, boolean whippedCream, boolean chocolate) {
         return "Name: Kaptain Kunal \n" +
                 "Add Whipped Cream? " + whippedCream + "\n" +
+                "Add Chocolate? " + chocolate + "\n" +
                 "Quantity: " + quantity + "\n" +
                 "Total: " + price + "\n" +
                 "Thank you!";
