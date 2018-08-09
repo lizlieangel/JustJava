@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         boolean whippedCream = hasCream();
         boolean chocolate = hasChocolate();
         int price = calculatePrice();
-        Log.d("price2", "Submit order total price" +price);
         String name = getUsername();
         String order = createOrderSummary(price, whippedCream, chocolate, name);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int calculatePrice() {
         int total = quantity * basePrice;
-        Log.d("price", "Calculate Total price: "+ total);
         return total;
     }
 
@@ -72,13 +70,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String createOrderSummary(int price, boolean whippedCream, boolean chocolate,String name) {
-        Log.d("price1", "Create order total price: "+ price);
-        return "Name: " + name + "\n" +
+        return getString(R.string.order_summary_name, name)+ "\n" +
                 "Add Whipped Cream? " + whippedCream + "\n" +
                 "Add Chocolate? " + chocolate + "\n" +
                 "Quantity: " + quantity + "\n" +
                 "Total: " + price + "\n" +
-                "Thank you!";
+                getString(R.string.thank_you);
     }
 
     public void displayQuantity(int q) {
