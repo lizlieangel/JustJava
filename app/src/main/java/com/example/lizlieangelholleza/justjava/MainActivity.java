@@ -70,12 +70,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String createOrderSummary(int price, boolean whippedCream, boolean chocolate,String name) {
-        return getString(R.string.order_summary_name, name)+ "\n" +
-                "Add Whipped Cream? " + whippedCream + "\n" +
-                "Add Chocolate? " + chocolate + "\n" +
-                "Quantity: " + quantity + "\n" +
-                "Total: " + price + "\n" +
-                getString(R.string.thank_you);
+        String orderSummary = getString(R.string.order_summary_name, name) + "\n";
+        orderSummary += getString(R.string.order_summary_whipped_cream, whippedCream) + "\n";
+        orderSummary += getString(R.string.order_summary_chocolate, chocolate)+ "\n";
+        orderSummary += getString(R.string.order_summary_quantity, quantity) + "\n";
+        orderSummary += getString(R.string.order_summary_total, price)+ "\n";
+        orderSummary += getString(R.string.thank_you);
+        return  orderSummary;
     }
 
     public void displayQuantity(int q) {

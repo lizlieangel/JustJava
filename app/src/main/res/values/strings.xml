@@ -11,5 +11,9 @@
     <string name="chocolate">Chocolate</string>
     <string name="name">Name</string>
     <string name="thank_you">Thank you</string>
-    <string name="order_summary_name">Name: <xliff:g id="name">%s</xliff:g></string>
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Liz">%s</xliff:g></string>
+    <string name="order_summary_whipped_cream">Add whipped cream? <xliff:g id="order_whipped_cream" example="true">%b</xliff:g></string>
+    <string name="order_summary_chocolate">Add chocolate? <xliff:g id="order_chocolate" example="true">%b</xliff:g></string>
+    <string name="order_summary_quantity">Quantity: <xliff:g id="order_quantity">%d</xliff:g></string>
+    <string name="order_summary_total">Total: <xliff:g id="order_total">%d</xliff:g></string>
 </resources>
