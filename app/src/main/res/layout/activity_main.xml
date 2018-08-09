@@ -23,12 +23,9 @@
             android:layout_marginBottom="@dimen/margin"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:text="@string/toppings"
             android:layout_marginBottom="@dimen/margin"
-            android:textSize="@dimen/text_size"
-            android:textAllCaps="true"
             />
 
         <CheckBox
@@ -47,13 +44,10 @@
             android:textSize="@dimen/text_size"
             android:paddingLeft="@dimen/padding_side"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:text="@string/quantity"
             android:layout_marginBottom="@dimen/margin"
             android:layout_marginTop="@dimen/margin"
-            android:textSize="@dimen/text_size"
-            android:textAllCaps="true"
             />
 
         <LinearLayout
