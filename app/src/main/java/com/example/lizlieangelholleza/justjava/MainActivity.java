@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice();
         Log.d("price2", "Submit order total price" +price);
         String name = getUsername();
-//        displayMessage(createOrderSummary(price, whippedCream, chocolate, name));
         String order = createOrderSummary(price, whippedCream, chocolate, name);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
         basePrice = 5;
     }
 
@@ -105,10 +103,5 @@ public class MainActivity extends AppCompatActivity {
         }
         quantity = quantity - 1;
         displayQuantity(quantity);
-    }
-
-    public void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
     }
 }
